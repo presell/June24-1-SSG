@@ -82,7 +82,6 @@ export const PlasmicPageOverview__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicPageOverview__OverridesType = {
   root?: Flex__<"div">;
-  freeBox?: Flex__<"div">;
   squeezePlasmicCmsHypernova2?: Flex__<typeof SqueezePlasmicCmsHypernova2>;
 };
 
@@ -173,47 +172,27 @@ function PlasmicPageOverview__RenderFunc(props: {
             sty.root
           )}
         >
-          {(() => {
-            try {
-              return true;
-            } catch (e) {
-              if (
-                e instanceof TypeError ||
-                e?.plasmicType === "PlasmicUndefinedDataError"
-              ) {
-                return true;
+          <SqueezePlasmicCmsHypernova2
+            data-plasmic-name={"squeezePlasmicCmsHypernova2"}
+            data-plasmic-override={overrides.squeezePlasmicCmsHypernova2}
+            className={classNames(
+              "__wab_instance",
+              sty.squeezePlasmicCmsHypernova2
+            )}
+            slug={(() => {
+              try {
+                return $ctx.params.slug;
+              } catch (e) {
+                if (
+                  e instanceof TypeError ||
+                  e?.plasmicType === "PlasmicUndefinedDataError"
+                ) {
+                  return undefined;
+                }
+                throw e;
               }
-              throw e;
-            }
-          })() ? (
-            <div
-              data-plasmic-name={"freeBox"}
-              data-plasmic-override={overrides.freeBox}
-              className={classNames(projectcss.all, sty.freeBox)}
-            >
-              <SqueezePlasmicCmsHypernova2
-                data-plasmic-name={"squeezePlasmicCmsHypernova2"}
-                data-plasmic-override={overrides.squeezePlasmicCmsHypernova2}
-                className={classNames(
-                  "__wab_instance",
-                  sty.squeezePlasmicCmsHypernova2
-                )}
-                slug={(() => {
-                  try {
-                    return $ctx.params.slug;
-                  } catch (e) {
-                    if (
-                      e instanceof TypeError ||
-                      e?.plasmicType === "PlasmicUndefinedDataError"
-                    ) {
-                      return undefined;
-                    }
-                    throw e;
-                  }
-                })()}
-              />
-            </div>
-          ) : null}
+            })()}
+          />
         </div>
       </div>
     </React.Fragment>
@@ -221,8 +200,7 @@ function PlasmicPageOverview__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "freeBox", "squeezePlasmicCmsHypernova2"],
-  freeBox: ["freeBox", "squeezePlasmicCmsHypernova2"],
+  root: ["root", "squeezePlasmicCmsHypernova2"],
   squeezePlasmicCmsHypernova2: ["squeezePlasmicCmsHypernova2"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -230,7 +208,6 @@ type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  freeBox: "div";
   squeezePlasmicCmsHypernova2: typeof SqueezePlasmicCmsHypernova2;
 };
 
@@ -294,7 +271,6 @@ export const PlasmicPageOverview = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    freeBox: makeNodeComponent("freeBox"),
     squeezePlasmicCmsHypernova2: makeNodeComponent(
       "squeezePlasmicCmsHypernova2"
     ),

@@ -3,10 +3,11 @@
   flex-direction: column;
   position: relative;
   width: 100%;
-  height: auto;
+  height: 100%;
   justify-content: flex-start;
   align-items: center;
   min-width: 0;
+  min-height: 0;
 }
 .freeBox__as0Fb {
   display: flex;
@@ -32,16 +33,18 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 1024px;
   max-width: 100%;
-  min-width: 917px;
   background: #ffffff;
+  min-width: 800px;
   padding: 85px 25px 0px 85px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .leftColumn {
     min-width: auto;
+    height: 100%;
+    min-height: 0;
     padding: 0px;
   }
 }
@@ -463,10 +466,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   width: 100%;
-  height: auto;
-  max-width: 100%;
+  height: 100%;
   background: #fafafa;
   min-width: 0;
+  min-height: 0;
   padding: 85px 85px 0px 25px;
 }
 @media (min-width: 0px) and (max-width: 768px) {
